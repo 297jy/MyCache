@@ -12,6 +12,19 @@ var (
 	CRLF = "\r\n"
 )
 
+type UnknownErrReply struct{}
+
+var unknownErrBytes = []byte("-Err unknown\r\n")
+
+// ToBytes marshals redis.Reply
+func (r *UnknownErrReply) ToBytes() []byte {
+	return unknownErrBytes
+}
+
+func (r *UnknownErrReply) Error() string {
+	return "Err unknown"
+}
+
 /* ---- Bulk Reply ---- */
 
 // BulkReply stores a binary-safe string

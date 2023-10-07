@@ -3,11 +3,11 @@ package cluster
 import "gomemory/server/protocol"
 
 type EtcdTopology struct {
-	cluster   *CacheCluster
+	cluster   *Cluster
 	closeChan chan struct{}
 }
 
-func newEtcdTopology(cluster *CacheCluster) *EtcdTopology {
+func newEtcdTopology(cluster *Cluster) *EtcdTopology {
 	return &EtcdTopology{
 		cluster:   cluster,
 		closeChan: make(chan struct{}),

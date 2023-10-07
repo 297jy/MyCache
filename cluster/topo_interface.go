@@ -2,6 +2,8 @@ package cluster
 
 import (
 	"gomemory/server/protocol"
+	"hash/crc32"
+	"strings"
 	"time"
 )
 
@@ -35,4 +37,21 @@ type topology interface {
 	LoadConfigFile() protocol.ErrorReply
 	Join(seed string) protocol.ErrorReply
 	Close() error
+}
+
+func getSlot(key string) uint32 {
+	partitionKey := getPartitionKey(key)
+	return crc32.ChecksumIEEE([]byte(partitionKey)) % uint32(slotCount)
+}
+
+func getPartitionKey(key string) string {
+	beg := strings.Index(key, "{")
+	if beg == -1 {
+		return key
+	}
+	end := strings.Index(key, "}")
+	if end == -1 || end == beg+1 {
+		return key
+	}
+	return key[beg+1 : end]
 }

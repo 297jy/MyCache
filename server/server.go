@@ -28,7 +28,7 @@ type Handler struct {
 func MakeCacheHandler() *Handler {
 	var db database.DB
 	if config.CacheProperties.ClusterEnable {
-		db = cluster.MakeCacheCluster()
+		db = cluster.MakeCluster()
 	} else {
 		//db = database2.NewStandaloneServer()
 	}
@@ -69,5 +69,13 @@ func (h *Handler) Handle(ctx context.Context, conn net.Conn) {
 
 // Close stops handler
 func (h *Handler) Close() error {
+	logger.Info("handler shutting down...")
+	h.closing.Set(true)
+	h.activeConn.Range(func(key, value any) bool {
+		client := key.(*connection.Connection)
+		_ = client.Close()
+		return true
+	})
+	h.db.Close()
 	return nil
 }

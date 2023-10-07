@@ -5,7 +5,7 @@ import "gomemory/interface/server"
 type CmdLine = [][]byte
 
 type DB interface {
-	Exec(client server.Connection, cmdLine CmdLine) server.Reply
+	Exec(client server.Connection, cmdLine CmdLine) (result server.Reply)
 	AfterClientClose(client server.Connection)
 	Close()
 }

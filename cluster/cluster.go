@@ -1,6 +1,7 @@
 package cluster
 
 import (
+	"fmt"
 	"gomemory/config"
 	database2 "gomemory/database"
 	"gomemory/datastruct/dict"
@@ -8,11 +9,25 @@ import (
 	"gomemory/interface/cache"
 	"gomemory/interface/server"
 	"gomemory/lib/idgenerator"
+	"gomemory/lib/logger"
 	"gomemory/server/parser"
+	"gomemory/server/protocol"
+	"runtime/debug"
+	"strings"
 	"sync"
 )
 
+const slotCount int = 16384
+
+const (
+	slotStateHost = iota
+	slotStateImporting
+	slotStateMovingOut
+)
+
 type CmdLine = [][]byte
+
+type CmdFunc func(cluster *Cluster, c server.Connection, cmdLine CmdLine) server.Reply
 
 // hostSlot stores status of host which hosted by current node
 type hostSlot struct {
@@ -54,7 +69,7 @@ type clientFactory interface {
 	Close() error
 }
 
-type CacheCluster struct {
+type Cluster struct {
 	self          string
 	addr          string
 	db            cache.DBEngine
@@ -62,13 +77,13 @@ type CacheCluster struct {
 	transactionMu sync.RWMutex
 	topology      topology
 	slotMu        sync.RWMutex
-	slots         map[uint32]hostSlot
+	slots         map[uint32]*hostSlot
 	idGenerator   *idgenerator.IDGenerator
 	clientFactory clientFactory
 }
 
-func MakeCacheCluster() *CacheCluster {
-	cluster := &CacheCluster{
+func MakeCluster() *Cluster {
+	cluster := &Cluster{
 		self:          config.CacheProperties.Self,
 		addr:          config.CacheProperties.AnnounceAddress(),
 		db:            database2.NewStandaloneCacheServer(),
@@ -91,12 +106,33 @@ func MakeCacheCluster() *CacheCluster {
 	return cluster
 }
 
-func (cluster *CacheCluster) Exec(c server.Connection, cmdLine CmdLine) server.Reply {
+func (cluster *Cluster) Exec(c server.Connection, cmdLine CmdLine) (result server.Reply) {
+	defer func() {
+		if err := recover(); err != nil {
+			logger.Warn(fmt.Sprintf("error occurs: %v\n%s", err, string(debug.Stack())))
+			result = &protocol.UnknownErrReply{}
+		}
+	}()
+
+	cmdName := strings.ToLower(string(cmdLine[0]))
+	cmdFunc, ok := router[cmdName]
+	if !ok {
+		return protocol.MakeErrReply("ERR unknown command '" + cmdName + "', or not supported in cluster mode")
+	}
+	result = cmdFunc(cluster, c, cmdLine)
 	return nil
 }
 
-func (cluster *CacheCluster) AfterClientClose(c server.Connection) {
+func (cluster *Cluster) AfterClientClose(c server.Connection) {
 }
 
-func (cluster *CacheCluster) Close() {
+func (cluster *Cluster) Close() {
+}
+
+// 获取 key slot对应的node节点
+func (cluster *Cluster) pickNode(slotID uint32) *Node {
+	//todo 暂时忽略再平衡时的问题，后面补上
+	slot := cluster.topology.GetSlots()[int(slotID)]
+	node := cluster.topology.GetNode(slot.NodeID)
+	return node
 }

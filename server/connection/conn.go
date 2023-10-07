@@ -5,6 +5,7 @@ import (
 	"gomemory/lib/sync/wait"
 	"net"
 	"sync"
+	"time"
 )
 
 type Connection struct {
@@ -38,4 +39,11 @@ func NewConn(conn net.Conn) *Connection {
 
 func (c *Connection) Write(b []byte) (int, error) {
 	return 0, nil
+}
+
+func (c *Connection) Close() error {
+	c.sendingData.WaitWithTimeout(10 * time.Second)
+	_ = c.conn.Close()
+	connPool.Put(c)
+	return nil
 }
