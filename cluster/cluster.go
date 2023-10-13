@@ -84,21 +84,21 @@ type Cluster struct {
 
 func MakeCluster() *Cluster {
 	cluster := &Cluster{
-		self:          config.CacheProperties.Self,
-		addr:          config.CacheProperties.AnnounceAddress(),
-		db:            database2.NewStandaloneCacheServer(),
+		self:          config.Properties.Self,
+		addr:          config.Properties.AnnounceAddress(),
+		db:            database2.NewStandaloneServer(),
 		transactions:  dict.MakeSimple(),
-		idGenerator:   idgenerator.MakeGenerator(config.CacheProperties.Self),
+		idGenerator:   idgenerator.MakeGenerator(config.Properties.Self),
 		clientFactory: newDefaultClientFactory(),
 	}
 	cluster.topology = newEtcdTopology(cluster)
 
 	var err error
 	// 如果是主节点
-	if config.CacheProperties.ClusterAsSeed {
-		err = cluster.startAsSeed(config.CacheProperties.AnnounceAddress())
+	if config.Properties.ClusterAsSeed {
+		err = cluster.startAsSeed(config.Properties.AnnounceAddress())
 	} else {
-		err = cluster.join(config.CacheProperties.ClusterSeed)
+		err = cluster.join(config.Properties.ClusterSeed)
 	}
 	if err != nil {
 		panic(err)

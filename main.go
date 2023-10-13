@@ -18,7 +18,7 @@ var banner = `
 \____/\____/\__,_/_/____/
 `
 
-var defaultProperties = &config.CacheServerProperties{
+var defaultProperties = &config.ServerProperties{
 	Bind:  "0.0.0.0",
 	Port:  6399,
 	RunID: utils.RandString(40),
@@ -43,14 +43,14 @@ func main() {
 		if fileExists("mycache.conf") {
 			config.SetupCacheConfig("mycache.conf")
 		} else {
-			config.CacheProperties = defaultProperties
+			config.Properties = defaultProperties
 		}
 	} else {
 		config.SetupCacheConfig(configFilename)
 	}
 	err := tcp.ListenAndServerWithSignal(&tcp.Config{
-		Address: fmt.Sprintf("%s:%d", config.CacheProperties.Bind, config.CacheProperties.Port),
-	}, server.MakeCacheHandler())
+		Address: fmt.Sprintf("%s:%d", config.Properties.Bind, config.Properties.Port),
+	}, server.MakeHandler())
 
 	if err != nil {
 		logger.Error(err)

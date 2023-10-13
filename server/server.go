@@ -4,6 +4,7 @@ import (
 	"context"
 	"gomemory/cluster"
 	"gomemory/config"
+	database2 "gomemory/database"
 	"gomemory/interface/database"
 	"gomemory/lib/logger"
 	"gomemory/lib/sync/atomic"
@@ -25,12 +26,12 @@ type Handler struct {
 	closing    atomic.Boolean // 当服务器正在停止服务时，值为true，拒绝所有客户端的请求
 }
 
-func MakeCacheHandler() *Handler {
+func MakeHandler() *Handler {
 	var db database.DB
-	if config.CacheProperties.ClusterEnable {
+	if config.Properties.ClusterEnable {
 		db = cluster.MakeCluster()
 	} else {
-		//db = database2.NewStandaloneServer()
+		db = database2.NewStandaloneServer()
 	}
 	return &Handler{
 		db: db,

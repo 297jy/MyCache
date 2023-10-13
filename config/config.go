@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-type CacheServerProperties struct {
+type ServerProperties struct {
 	RunID        string `cfg:"runid"` // runID always different at every exec.
 	Bind         string `cfg:"bind"`
 	Port         int    `cfg:"port"`
@@ -34,11 +34,11 @@ type ServerInfo struct {
 	StartUpTime time.Time
 }
 
-var CacheProperties *CacheServerProperties
+var Properties *ServerProperties
 
 var EachTimeServerInfo *ServerInfo
 
-func (p *CacheServerProperties) AnnounceAddress() string {
+func (p *ServerProperties) AnnounceAddress() string {
 	return p.AnnounceHost + ":" + strconv.Itoa(p.Port)
 }
 
@@ -49,17 +49,17 @@ func SetupCacheConfig(configFileName string) {
 	}
 	defer file.Close()
 
-	CacheProperties = &CacheServerProperties{}
-	CacheProperties = parse[*CacheServerProperties](file, CacheProperties)
-	CacheProperties.RunID = utils.RandString(40)
+	Properties = &ServerProperties{}
+	Properties = parse[*ServerProperties](file, Properties)
+	Properties.RunID = utils.RandString(40)
 
 	configFilePath, err := filepath.Abs(configFileName)
 	if err != nil {
 		panic(err)
 	}
-	CacheProperties.CfPath = configFilePath
-	if CacheProperties.Dir == "" {
-		CacheProperties.Dir = "."
+	Properties.CfPath = configFilePath
+	if Properties.Dir == "" {
+		Properties.Dir = "."
 	}
 }
 
@@ -86,7 +86,7 @@ func readRawMap(src io.Reader) map[string]string {
 	return rawMap
 }
 
-func parse[T *CacheServerProperties](src io.Reader, config T) T {
+func parse[T *ServerProperties](src io.Reader, config T) T {
 	//config := &ServerProperties{}
 	rawMap := readRawMap(src)
 
@@ -128,5 +128,5 @@ func parse[T *CacheServerProperties](src io.Reader, config T) T {
 }
 
 func GetTempDir() string {
-	return CacheProperties.Dir + "/tmp"
+	return Properties.Dir + "/tmp"
 }

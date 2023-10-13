@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b3dfc3-a286-45eb-8dd6-915ac9ff8df1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cluster/com.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cluster/topo_utils.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pool/pool.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/client/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gomemory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gomemory.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/remote-targets.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/commandinfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/hash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/string.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cluster/cluster.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/cluster.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/com_factory.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/com_factory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/etcd.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/etcd.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/topo.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/topo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cluster/topo_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/topo_interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/database/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/database/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/server/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/server/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/connection/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/connection/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/protocol/reply.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/protocol/reply.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/protocol/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/protocol/consts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,34 +34,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2WPwRyx5Fc0HS0kLOKhrKTOHFRE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/project/godis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/project/godis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
