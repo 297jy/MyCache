@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b3dfc3-a286-45eb-8dd6-915ac9ff8df1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/commandinfo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/hash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/string.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gomemory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gomemory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cluster/cluster.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/cluster.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/etcd.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/raft.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/topo.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/topo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cluster/topo_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/cluster/topo_utils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/protocol/consts.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/protocol/consts.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/connection/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/connection/conn.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$USER_HOME$/go/go1.21.2" />
+  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.21.3" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -43,31 +41,73 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/project/godis&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/project/gomemory",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="go build gomemory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="gomemory" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="gomemory" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build gomemory" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/server/parser/parser.go</url>
+          <line>33</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cluster/cluster.go</url>
+          <line>117</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cluster/router.go</url>
+          <line>16</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/database/server.go</url>
+          <line>23</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

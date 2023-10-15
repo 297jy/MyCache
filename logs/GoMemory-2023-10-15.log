@@ -1,0 +1,288 @@
+2023/10/15 13:19:46 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 14:18:04 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 14:18:11 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 14:25:58 [INFO][server.go:75] accept link
+2023/10/15 14:26:14 [ERROR][server.go:54] empty payload
+2023/10/15 14:42:54 [INFO][server.go:75] accept link
+2023/10/15 14:44:51 [ERROR][server.go:54] empty payload
+2023/10/15 15:08:56 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 15:09:32 [INFO][server.go:75] accept link
+2023/10/15 15:10:36 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 15:10:42 [INFO][server.go:75] accept link
+2023/10/15 15:12:18 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 15:12:49 [INFO][server.go:75] accept link
+2023/10/15 15:17:03 [ERROR][server.go:54] empty payload
+2023/10/15 15:17:03 [INFO][server.go:75] accept link
+2023/10/15 15:17:41 [ERROR][server.go:54] empty payload
+2023/10/15 15:19:51 [INFO][server.go:75] accept link
+2023/10/15 15:58:16 [INFO][server.go:75] accept link
+2023/10/15 15:58:16 [ERROR][server.go:54] empty payload
+2023/10/15 15:59:16 [INFO][server.go:53] get exit signal
+2023/10/15 16:01:50 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:02:12 [INFO][server.go:75] accept link
+2023/10/15 16:03:16 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc00000c168?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0001e0000, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0001e0000, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:04:41 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000300000?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0001e0090, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0001e0090, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:06:16 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000388048?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc000090048, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc000090048, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:07:12 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000300018?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0000900c0, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc0000900c0, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:09:01 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000300000?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc00031a048, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc00031a048, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:16:35 [INFO][server.go:75] accept link
+2023/10/15 16:16:56 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 38 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000300030?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc00031a0d8, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xf3ea80, 0xc000102000}, {0xc00031a0d8, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:16:56 [INFO][server.go:75] accept link
+2023/10/15 16:16:56 [ERROR][server.go:54] empty payload
+2023/10/15 16:16:57 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:17:14 [INFO][server.go:75] accept link
+2023/10/15 16:34:27 [WARN][cluster.go:113] error occurs: runtime error: index out of range [1] with length 1
+goroutine 25 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000318000?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.defaultFunc(0xc000094000, {0xf3ea80, 0xc000302000}, {0xc0000921b0, 0x1, 0x1})
+	D:/project/gomemory/cluster/router.go:16 +0x225
+gomemory/cluster.(*Cluster).Exec(0xc000094000, {0xf3ea80, 0xc000302000}, {0xc0000921b0, 0x1, 0x1})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc00009e140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00029c008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:35:26 [ERROR][server.go:54] empty payload
+2023/10/15 16:37:08 [INFO][server.go:75] accept link
+2023/10/15 16:37:08 [WARN][cluster.go:113] error occurs: runtime error: index out of range [11177] with length 0
+goroutine 26 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xf1a7c0?, 0xc000406018?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.(*Cluster).pickNode(0xc000094000, 0x2ba9)
+	D:/project/gomemory/cluster/cluster.go:143 +0xa7
+gomemory/cluster.defaultFunc(0xc000094000, {0xf3ea80, 0xc00009e180}, {0xc00001a030, 0x2, 0x2})
+	D:/project/gomemory/cluster/router.go:18 +0xc5
+gomemory/cluster.(*Cluster).Exec(0xc000094000, {0xf3ea80, 0xc00009e180}, {0xc00001a030, 0x2, 0x2})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc00009e140, {0xf3ef58, 0x1053380}, {0xf3f5d0, 0xc00008c048})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:37:10 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:37:25 [INFO][server.go:75] accept link
+2023/10/15 16:41:11 [WARN][cluster.go:113] error occurs: runtime error: index out of range [11177] with length 0
+goroutine 42 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/cluster.(*Cluster).Exec.func1()
+	D:/project/gomemory/cluster/cluster.go:113 +0x4f
+panic({0xb4a7c0?, 0xc000fa6000?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/cluster.(*Cluster).pickNode(0xc000110000, 0x2ba9)
+	D:/project/gomemory/cluster/cluster.go:143 +0xa7
+gomemory/cluster.defaultFunc(0xc000110000, {0xb6ea80, 0xc000f8e000}, {0xc000de2150, 0x2, 0x2})
+	D:/project/gomemory/cluster/router.go:18 +0xc5
+gomemory/cluster.(*Cluster).Exec(0xc000110000, {0xb6ea80, 0xc000f8e000}, {0xc000de2150, 0x2, 0x2})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc00011a140, {0xb6ef58, 0xc83380}, {0xb6f5d0, 0xc000400008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:41:13 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:41:38 [INFO][server.go:75] accept link
+2023/10/15 16:42:39 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:42:50 [INFO][server.go:75] accept link
+2023/10/15 16:43:49 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:43:56 [INFO][server.go:75] accept link
+2023/10/15 16:44:59 [WARN][server.go:17] error occurs: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/database.(*Standalone).Exec.func1()
+	D:/project/gomemory/database/server.go:17 +0x4f
+panic({0xd33c60?, 0xe28c40?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/database.(*Standalone).Exec(0x0, {0xd6ec80, 0xc00048a000}, {0xc000d70150, 0x2, 0x2})
+	D:/project/gomemory/database/server.go:24 +0xb2
+gomemory/cluster.defaultFunc(0xc000094000, {0xd6ec80, 0xc00048a000}, {0xc000d70150, 0x2, 0x2})
+	D:/project/gomemory/cluster/router.go:20 +0x171
+gomemory/cluster.(*Cluster).Exec(0xc000094000, {0xd6ec80, 0xc00048a000}, {0xc000d70150, 0x2, 0x2})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc00009e140, {0xd6f158, 0xe83380}, {0xd6f7d0, 0xc000400008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:45:00 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:45:05 [INFO][server.go:75] accept link
+2023/10/15 16:47:26 [WARN][server.go:17] error occurs: runtime error: invalid memory address or nil pointer dereference
+goroutine 24 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/database.(*Standalone).Exec.func1()
+	D:/project/gomemory/database/server.go:17 +0x4f
+panic({0xd33c60?, 0xe28c40?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/database.(*Standalone).Exec(0x0, {0xd6ec80, 0xc000382000}, {0xc000de2150, 0x2, 0x2})
+	D:/project/gomemory/database/server.go:24 +0xb2
+gomemory/cluster.defaultFunc(0xc000060000, {0xd6ec80, 0xc000382000}, {0xc000de2150, 0x2, 0x2})
+	D:/project/gomemory/cluster/router.go:20 +0x171
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xd6ec80, 0xc000382000}, {0xc000de2150, 0x2, 0x2})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xd6f158, 0xe83380}, {0xd6f7d0, 0xc0001de008})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 16:48:05 [INFO][server.go:42] bind: 0.0.0.0:6399, start listenning...
+2023/10/15 16:48:11 [INFO][server.go:75] accept link
+2023/10/15 21:52:52 [INFO][server.go:75] accept link
+2023/10/15 21:52:52 [WARN][server.go:17] error occurs: runtime error: index out of range [1] with length 1
+goroutine 51 [running]:
+runtime/debug.Stack()
+	C:/Users/chen/sdk/go1.21.3/src/runtime/debug/stack.go:24 +0x6b
+gomemory/database.(*Standalone).Exec.func1()
+	D:/project/gomemory/database/server.go:17 +0x4f
+panic({0xc0a980?, 0xc00000c0d8?})
+	C:/Users/chen/sdk/go1.21.3/src/runtime/panic.go:920 +0x290
+gomemory/database.execSet(0xc000de0c00, {0xc000de1038, 0x1, 0x1})
+	D:/project/gomemory/database/string.go:19 +0x1db
+gomemory/database.(*DB).execNormalCommand(0xc000de0c00, {0xc000de1020, 0x2, 0x2})
+	D:/project/gomemory/database/database.go:93 +0x1a7
+gomemory/database.(*DB).Exec(0xc000de0c00, {0xc2ec70, 0xc001298040}, {0xc000de1020, 0x2, 0x2})
+	D:/project/gomemory/database/database.go:83 +0x4b
+gomemory/database.(*Standalone).Exec(0xc00004a048, {0xc2ec70, 0xc001298040}, {0xc000de1020, 0x2, 0x2})
+	D:/project/gomemory/database/server.go:25 +0x125
+gomemory/cluster.defaultFunc(0xc000060000, {0xc2ec70, 0xc001298040}, {0xc000de1020, 0x2, 0x2})
+	D:/project/gomemory/cluster/router.go:20 +0x171
+gomemory/cluster.(*Cluster).Exec(0xc000060000, {0xc2ec70, 0xc001298040}, {0xc000de1020, 0x2, 0x2})
+	D:/project/gomemory/cluster/cluster.go:123 +0x1d8
+gomemory/server.(*Handler).Handle(0xc000058140, {0xc2f138, 0xd43380}, {0xc2f7b0, 0xc00004a050})
+	D:/project/gomemory/server/server.go:62 +0x256
+gomemory/tcp.ListenAndServe.func2()
+	D:/project/gomemory/tcp/server.go:83 +0xee
+created by gomemory/tcp.ListenAndServe in goroutine 1
+	D:/project/gomemory/tcp/server.go:78 +0x68c
+
+2023/10/15 21:52:52 [ERROR][server.go:54] empty payload
+2023/10/15 21:58:12 [INFO][server.go:53] get exit signal

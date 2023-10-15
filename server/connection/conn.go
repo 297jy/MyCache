@@ -38,12 +38,20 @@ func NewConn(conn net.Conn) *Connection {
 }
 
 func (c *Connection) Write(b []byte) (int, error) {
-	return 0, nil
+	if len(b) == 0 {
+		return 0, nil
+	}
+	c.sendingData.Add(1)
+	defer func() {
+		c.sendingData.Done()
+	}()
+	return c.conn.Write(b)
 }
 
 func (c *Connection) Close() error {
 	c.sendingData.WaitWithTimeout(10 * time.Second)
 	_ = c.conn.Close()
+	// 归还连接池
 	connPool.Put(c)
 	return nil
 }

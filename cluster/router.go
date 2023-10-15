@@ -19,8 +19,19 @@ func defaultFunc(cluster *Cluster, c server.Connection, args [][]byte) server.Re
 	if peer.ID == cluster.self {
 		return cluster.db.Exec(c, args)
 	}
-	return cluster.db.Exec(c, args)
+	return cluster.relay(peer.ID, c, args)
 }
 func registerDefaultCmd(name string) {
 	registerCmd(name, defaultFunc)
+}
+
+func init() {
+	defaultCmds := []string{
+		"set",
+		"get",
+	}
+
+	for _, name := range defaultCmds {
+		registerDefaultCmd(name)
+	}
 }

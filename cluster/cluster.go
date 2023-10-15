@@ -91,7 +91,8 @@ func MakeCluster() *Cluster {
 		idGenerator:   idgenerator.MakeGenerator(config.Properties.Self),
 		clientFactory: newDefaultClientFactory(),
 	}
-	cluster.topology = newEtcdTopology(cluster)
+	cluster.topology = newRaftTopology(cluster)
+	cluster.slots = make(map[uint32]*hostSlot)
 
 	var err error
 	// 如果是主节点
@@ -120,7 +121,7 @@ func (cluster *Cluster) Exec(c server.Connection, cmdLine CmdLine) (result serve
 		return protocol.MakeErrReply("ERR unknown command '" + cmdName + "', or not supported in cluster mode")
 	}
 	result = cmdFunc(cluster, c, cmdLine)
-	return nil
+	return
 }
 
 func (cluster *Cluster) AfterClientClose(c server.Connection) {
@@ -131,6 +132,13 @@ func (cluster *Cluster) Close() {
 
 // 获取 key slot对应的node节点
 func (cluster *Cluster) pickNode(slotID uint32) *Node {
+	/**
+	hSlot := cluster.getHostSlot(slotID)
+	if hSlot != nil {
+		switch hSlot.state {
+
+		}
+	}**/
 	//todo 暂时忽略再平衡时的问题，后面补上
 	slot := cluster.topology.GetSlots()[int(slotID)]
 	node := cluster.topology.GetNode(slot.NodeID)

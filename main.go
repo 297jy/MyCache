@@ -19,9 +19,11 @@ var banner = `
 `
 
 var defaultProperties = &config.ServerProperties{
-	Bind:  "0.0.0.0",
-	Port:  6399,
-	RunID: utils.RandString(40),
+	Bind:          "0.0.0.0",
+	Port:          6399,
+	RunID:         utils.RandString(40),
+	ClusterEnable: true,
+	ClusterAsSeed: true,
 }
 
 func fileExists(filename string) bool {

@@ -38,7 +38,7 @@ type Standalone struct {
 }
 
 func NewStandaloneServer() *Standalone {
-	server := &Standalone{}
+	s := &Standalone{}
 
 	config.GetTempDir()
 	err := os.MkdirAll(config.GetTempDir(), os.ModePerm)
@@ -49,9 +49,9 @@ func NewStandaloneServer() *Standalone {
 	db := makeDB()
 	holder := &atomic.Value{}
 	holder.Store(db)
-	server.db = holder
+	s.db = holder
 
-	return nil
+	return s
 }
 
 // DB stores data and execute user's commands
